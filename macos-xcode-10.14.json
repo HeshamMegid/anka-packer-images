@@ -1,0 +1,30 @@
+{
+  "builders": [
+    {
+     "type": "veertu-anka",
+     "vm_name": "{{ user `vm_name` }}",
+     "source_vm_name":  "{{user `source_vm`}}",
+     "boot_delay": "15s"
+    }
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "FASTLANE_USER={{user `fastlane_user`}}",
+        "FASTLANE_PASSWORD={{user `fastlane_password`}}",
+        "XCODE_VERSION={{user `xcode_version`}}"
+      ],
+      "scripts": [
+        "scripts/macos/xcode.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "vm_name": "macos-xcode-10.14",
+    "source_vm": "",
+    "xcode_version": "10.2.0",
+    "fastlane_user": "{{env `FASTLANE_USER`}}",
+    "fastlane_password": "{{env `FASTLANE_PASSWORD`}}"
+  }
+}

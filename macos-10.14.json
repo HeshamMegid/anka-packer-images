@@ -1,0 +1,29 @@
+{
+  "builders": [
+    {
+     "type": "veertu-anka",
+     "installer_app": "/Applications/Install macOS Mojave.app/",
+     "disk_size": "{{user `disk_size`}}",
+     "ram_size": "{{user `ram_size`}}",
+     "cpu_count": "{{user `cpu_count`}}",
+     "vm_name": "{{ user `vm_name` }}",
+     "source_vm_name":  "{{user `source_vm`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/macos/homebrew.sh",
+        "scripts/macos/ruby.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "cpu_count": "2",
+    "disk_size": "40G",
+    "ram_size": "8G",
+    "vm_name": "macos-base-10.14",
+    "source_vm": ""
+  }
+}
