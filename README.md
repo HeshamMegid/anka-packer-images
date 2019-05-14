@@ -20,15 +20,15 @@ make macos-10.12
 make macos-xcode-10.12 source_vm=macos-base-10.12-r1
 ```
 
-Phase 1: Basic MacOS
+Phase 1: Basic macOS
 --------------------
 
 The base layer is essentially macOS as the Veertu Anka leaves it post-install, with
 the following things added:
 
 - Homebrew
-- XCode Developer Tools
-- Rbenv and plugins
+- Xode Developer Tools
+- rbenv and plugins
 - Ruby 2.4.0
 
 It builds images in the form: `macos-base-X.X-rX`
@@ -37,7 +37,7 @@ It builds images in the form: `macos-base-X.X-rX`
 make macos-10.12
 ```
 
-Phase 2: XCode and Dashlane
+Phase 2: Xcode and Fastlane
 ---------------------------
 
 The base layer is the slowest layer, as it downloads and installs Xcode. It contains
